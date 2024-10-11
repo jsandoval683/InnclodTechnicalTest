@@ -1,0 +1,33 @@
+.footer {
+    height: 100px;
+    bottom: 0;
+}
+
+.notify {
+    height: max-content;
+    max-height: 100px;
+    width: 250px;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 9999;
+    right: 0;
+    top: 0px;
+    position: fixed;
+    overflow: auto;
+
+    h4,
+    p {
+        cursor: pointer;
+        margin: 3px;
+    }
+}
+
+.success {
+    background-color: var(--success);
+}
+
+.error {
+    background-color: var(--error);
+}

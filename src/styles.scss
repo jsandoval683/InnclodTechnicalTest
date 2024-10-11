@@ -1,1 +1,153 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&display=swap");
+@import url("./theme.scss");
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100vh;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background-color: var(--app-container);
+}
+
+main {
+    position: relative;
+    min-height: 100%;
+    height: min-content;
+}
+
+p,
+a,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--main-color);
+    cursor: default;
+    margin: 2px;
+}
+
+button,
+a {
+    cursor: pointer;
+    text-decoration: none;
+    font: 500 16px "Poppins", sans-serif;
+}
+
+.inputBox {
+    position: relative;
+    max-width: max-content;
+    margin: auto;
+}
+
+input,
+select {
+    width: 300px;
+    height: 45px;
+    border-radius: 14px;
+    border: 2px solid var(--main-color);
+    background-color: var(--app-container);
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--main-color);
+    padding: 5px 10px;
+    outline: none;
+    margin: 10px;
+    transition: .1s;
+    box-sizing: border-box;
+
+    &:hover,
+    &:focus {
+        border: 2px solid var(--primaryColor);
+        box-shadow: 0 4px var(--primaryColor);
+    }
+
+    option {
+        font-size: large;
+        cursor: pointer;
+    }
+}
+
+.placeholder {
+    position: absolute;
+    left: 25px;
+    top: 0;
+    max-width: max-content;
+    max-height: max-content;
+    background-color: var(--app-container);
+    padding: 0 5px;
+    border-radius: 7px;
+    // border-top: 2px solid var(--main-color);
+    // border-left: 2px solid var(--main-color);
+    // border-right: 2px solid var(--main-color);
+}
+
+select {
+    cursor: pointer;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    display: none;
+}
+
+input[type=file] {
+    display: none;
+}
+
+input[type=radio] {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    padding: 0;
+
+    &:hover,
+    &:focus {
+        border: 0px solid var(--primaryColor);
+        box-shadow: 0 0;
+    }
+}
+
+a.button,
+input.button,
+button {
+    transition: .2s;
+    background-color: var(--primaryColor);
+    color: var(--link-color-active);
+    width: 180px;
+    height: 50px;
+    border-radius: 10px;
+    border: 2px solid var(--primaryColor);
+    margin-bottom: 10px;
+
+    &:hover {
+        background-color: var(--app-container);
+        color: var(--primaryColor);
+    }
+
+    &:disabled {
+        opacity: 0.4;
+        user-select: none;
+        pointer-events: none;
+    }
+}
+
+.secundary {
+    background-color: var(--secondaryColor);
+    border: 2px solid var(--secondaryColor);
+
+    &:hover {
+        color: var(--secondaryColor);
+        border: 2px solid var(--secondaryColor);
+    }
+}
