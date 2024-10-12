@@ -11,12 +11,17 @@
     right: 0px;
     cursor: wait;
     padding: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .container {
     width: 3.25em;
     transform-origin: center;
     animation: rotate4 2s linear infinite;
+    width: 60px;
+    height: 60px;
 }
 
 .loader {

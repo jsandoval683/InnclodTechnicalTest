@@ -1,0 +1,31 @@
+@let formGroup = form();
+<div class="form-container">
+    <p class="title">Login</p>
+    <form [formGroup]="formGroup" (ngSubmit)="login()">
+        <div class="inputBox">
+            <input type="text" formControlName="user">
+            <span class="placeholder">Usuario</span>
+        </div>
+        <div class="inputBox">
+            <input formControlName="password">
+            <span class="placeholder">Contraseña</span>
+        </div>
+        @if (formGroup.get('user')?.touched && formGroup.get('user')?.errors?.['required']) {
+        <div class="alert">
+            El usuario es obligatorio.
+        </div>
+        }
+        @if (formGroup.get('password')?.touched && formGroup.get('password')?.errors?.['required']) {
+        <div class="alert">
+            La contraseña es obligatoria.
+        </div>
+        }
+        @if (formGroup.get('password')?.touched && formGroup.get('password')?.errors?.['minlength']) {
+        <div class="alert">
+            La contraseña debe tener más de {{formGroup.get('password')?.errors?.['minlength']?.requiredLength}}
+            digitos.
+        </div>
+        }
+        <button type="submit" [disabled]="formGroup.invalid">Ingresar</button>
+    </form>
+</div>
