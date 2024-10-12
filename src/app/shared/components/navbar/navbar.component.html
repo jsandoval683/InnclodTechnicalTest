@@ -1,3 +1,6 @@
 <nav>
     NAVBAR
+    @if (isLogged()) {
+    <button (click)="logout()">Logout</button>
+    }
 </nav>
