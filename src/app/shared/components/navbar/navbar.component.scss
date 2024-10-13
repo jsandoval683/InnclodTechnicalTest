@@ -1,8 +1,14 @@
 nav {
     display: flex;
-    justify-content: center;
+    padding: 10px;
     align-items: center;
     height: 90px;
     background-color: var(--primaryColor);
     color: var(--app-container);
+    justify-content: space-between;
+}
+
+.app-name {
+    font: 800 40px "Poppins", sans-serif;
+    margin-left: 10px;
 }

@@ -33,7 +33,6 @@ h4,
 h5,
 h6 {
     color: var(--main-color);
-    cursor: default;
     margin: 2px;
 }
 
@@ -123,12 +122,11 @@ input.button,
 button {
     transition: .2s;
     background-color: var(--primaryColor);
-    color: var(--link-color-active);
+    color: var(--app-container);
     width: 180px;
     height: 50px;
     border-radius: 10px;
     border: 2px solid var(--primaryColor);
-    margin-bottom: 10px;
 
     &:hover {
         background-color: var(--app-container);
@@ -173,3 +171,5 @@ button {
         color: var(--errorColor);
     }
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
