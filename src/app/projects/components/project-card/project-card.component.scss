@@ -1,0 +1,50 @@
+.card {
+    background-color: var(--primaryShade2);
+    flex-grow: 1;
+    flex-basis: 100;
+    border-radius: 16px;
+    margin: 20px;
+    transition: .4s;
+    height: fit-content;
+    min-height: 400px;
+    min-width: 300px;
+    max-width: 300px;
+    display: grid;
+    justify-content: center;
+
+    &:hover {
+        transform: scale(1.05, 1.05);
+        background-color: var(--primaryShade1);
+        box-shadow: 8px 8px var(--primaryShade2);
+    }
+
+    img {
+        width: 270px;
+        height: 270px;
+        border-radius: 16px;
+        justify-self: center;
+        margin-top: 10px;
+    }
+
+    .info {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .buttons {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    svg {
+        cursor: pointer;
+
+        &:hover {
+            color: var(--errorColor);
+        }
+    }
+}

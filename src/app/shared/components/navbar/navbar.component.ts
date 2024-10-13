@@ -14,6 +14,7 @@ export class NavbarComponent {
   #authService = inject(AuthService);
   #router = inject(Router);
   protected isLogged = computed<boolean>(() => this.#authService.isLogged());
+  protected appName: string = 'InnClod';
 
   logout(): void {
     this.#authService.logout();
