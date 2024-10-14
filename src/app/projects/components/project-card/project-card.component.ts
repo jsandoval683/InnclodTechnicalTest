@@ -12,7 +12,7 @@ import { NgOptimizedImage } from '@angular/common';
 export class ProjectCardComponent {
 
   project = input.required<Project>();
-  genericImg: string = 'https://cdn.pixabay.com/photo/2019/12/14/07/21/document-4694351_1280.png';
+  protected genericImg: string = 'https://cdn.pixabay.com/photo/2019/12/14/07/21/document-4694351_1280.png';
   deleteOutput = output();
   editOutput = output();
   goToTodoOutput = output();

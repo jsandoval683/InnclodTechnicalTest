@@ -1,5 +1,5 @@
 <nav>
-    <b class="app-name">{{appName}}</b>
+    <b class="app-name" routerLink="/projects">{{appName}}</b>
     @if (isLogged()) {
     <button (click)="logout()">Logout</button>
     }
