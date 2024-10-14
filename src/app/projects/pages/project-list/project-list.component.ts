@@ -7,6 +7,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { DeleteDialogComponent } from '../../components/delete-dialog/delete-dialog.component';
 import { ProjectFormComponent } from "../../components/project-form/project-form.component";
 import { ModalComponent } from '../../../shared/components/modal/modal.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-project-list',
@@ -19,6 +20,7 @@ export default class ProjectListComponent implements OnInit {
 
   #projectService = inject(ProjectApiService);
   #alertService = inject(AlertService);
+  #router = inject(Router);
   protected projects = signal<Project[]>([]);
   readonly dialog = inject(MatDialog);
   protected formModal = signal<boolean>(false);
@@ -81,5 +83,7 @@ export default class ProjectListComponent implements OnInit {
     this.closeFormModal();
     this.#alertService.success('Proceso exitoso');
   }
+
+  goToTodo = (projectId: number): Promise<boolean> => this.#router.navigate([`projects/todos/${projectId}`]);
 
 }

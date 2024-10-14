@@ -14,7 +14,7 @@
             <input formControlName="username">
             <span class="placeholder">Descripción</span>
         </div>
-        @if (formGroup.get('password')?.touched && formGroup.get('password')?.errors?.['required']) {
+        @if (formGroup.get('username')?.touched && formGroup.get('username')?.errors?.['required']) {
         <div class="alert">
             La descripción es obligatorio.
         </div>

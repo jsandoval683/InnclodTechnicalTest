@@ -1,0 +1,41 @@
+.card {
+    border: 2px solid var(--primaryColor);
+    border-radius: 14px;
+    margin: 15px;
+    padding: 10px;
+    box-shadow: 8px 8px var(--primaryShade2);
+    min-height: 70px;
+}
+
+.data-container {
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.data {
+    text-align: center;
+    margin: 10px;
+
+    svg {
+        cursor: pointer;
+    }
+
+    .edit {
+        &:hover {
+            color: var(--accentColor);
+        }
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .delete {
+        &:hover {
+            color: var(--errorColor);
+        }
+    }
+}

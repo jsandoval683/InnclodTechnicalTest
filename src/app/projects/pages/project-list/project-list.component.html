@@ -2,7 +2,7 @@
     <h1 class="title">Lista de proyectos</h1>
     <div class="card-container">
         @for (item of projects(); track item.id) {
-        <app-project-card class="app-card" [project]="item" (editOutput)="edit(item)" (deleteOutput)="openDialog('200ms', '200ms', item.id)" />
+        <app-project-card class="app-card" [project]="item" (editOutput)="edit(item)" (deleteOutput)="openDialog('200ms', '200ms', item.id)" (goToTodoOutput)="goToTodo(item.id)" />
         }
     </div>
     <div class="floatButton" (click)="openFormModal()">
