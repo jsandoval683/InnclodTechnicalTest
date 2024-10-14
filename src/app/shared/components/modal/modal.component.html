@@ -1,0 +1,16 @@
+<div class="modal-window">
+    <div class="modal-content">
+        <a (click)="closeModal()" title="Close" class="modal-close">
+            <svg width="24" height="24" fill="none">
+                <path stroke="currentColor" stroke-width="2" d="m15 9-6 6m0-6 6 6m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+            </svg>
+        </a>
+        <h2>{{modalTitle()}}</h2>
+        <section class="container">
+            <ng-container *ngTemplateOutlet="data()" />
+        </section>
+    </div>
+    <div class="shield" (click)="closeModal()">
+        <div class="visually-hidden">Close</div>
+    </div>
+</div>
