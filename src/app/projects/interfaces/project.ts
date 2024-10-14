@@ -2,11 +2,11 @@ export interface Project {
     id: number
     name: string
     username: string
-    email: string
-    address: Address
-    phone: string
+    email?: string
+    address?: Address
+    phone?: string
     website: string
-    company: Company
+    company?: Company
 }
 
 export interface Address {

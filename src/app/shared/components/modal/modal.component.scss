@@ -1,0 +1,74 @@
+.modal-window {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    backdrop-filter: brightness(70%);
+    z-index: 999;
+}
+
+.modal-content {
+    max-height: 80%;
+    overflow: auto;
+    min-width: 40%;
+    width: min-content;
+    max-width: 90%;
+    position: absolute;
+    border-radius: 30px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1em;
+    background: var(--app-container);
+    justify-content: center;
+    text-align: center;
+}
+
+.modal-close {
+    color: var(--primaryColor);
+    line-height: 50px;
+    font-size: xx-large;
+    font-weight: 800;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    width: 50px;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+        color: var(--secondaryColor);
+    }
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+}
+
+.shield {
+    border: 0;
+    inset: 0;
+    padding: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.visually-hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap;
+    outline: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    left: 0;
+}
