@@ -11,7 +11,7 @@
         </div>
         <div class="data">
             <h5>Estado:</h5>
-            <mat-checkbox [checked]="taskInfo.completed" />
+            <mat-checkbox [checked]="taskInfo.completed" (change)="changeStatus(taskInfo.completed)" />
         </div>
         <div class="data">
             <h5>Acciones:</h5>

@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { Task } from '../../interfaces/task';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 
@@ -12,12 +12,13 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 export class TaskCardComponent {
 
   task = input.required<Task>();
+  changeOutput = output<boolean>();
+  editOutput = output();
+  deleteOutput = output();
 
-  edit() {
+  changeStatus = (status: boolean): void => this.changeOutput.emit(!status);
 
-  }
+  edit = (): void => this.editOutput.emit();
 
-  delete() {
-    
-  }
+  delete = (): void => this.deleteOutput.emit();
 }

@@ -1,1 +1,19 @@
-<p>task-form works!</p>
+@let formGroup = form();
+<div class="form-container">
+    <form [formGroup]="formGroup" (ngSubmit)="save()">
+        <div class="inputBox">
+            <input type="text" formControlName="title">
+            <span class="placeholder">Título</span>
+        </div>
+        @if (formGroup.get('title')?.touched && formGroup.get('title')?.errors?.['required']) {
+        <div class="alert">
+            El título es obligatorio.
+        </div>
+        }
+        <div>
+            <span>Estado: </span>
+            <mat-checkbox formControlName="completed" />
+        </div>
+        <button type="submit" [disabled]="formGroup.invalid">Guardar</button>
+    </form>
+</div>

@@ -29,4 +29,12 @@ export class AlertService {
       status: true
     });
   }
+
+  info(message: string): void {
+    this.notify.set({
+      title: 'Info',
+      msg: message,
+      status: true
+    });
+  }
 }
