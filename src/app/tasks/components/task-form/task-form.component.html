@@ -5,7 +5,7 @@
             <input type="text" formControlName="title">
             <span class="placeholder">Título</span>
         </div>
-        @if (formGroup.get('title')?.touched && formGroup.get('title')?.errors?.['required']) {
+        @if (requiredValidator('title')) {
         <div class="alert">
             El título es obligatorio.
         </div>

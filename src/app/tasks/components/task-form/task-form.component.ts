@@ -52,4 +52,6 @@ export class TaskFormComponent implements OnInit {
     this.saveTask.emit(taskAux);
   }
 
+  requiredValidator = (formControl: string): boolean  => this.form().get(formControl)?.touched && this.form().get(formControl)?.errors?.['required'];
+
 }

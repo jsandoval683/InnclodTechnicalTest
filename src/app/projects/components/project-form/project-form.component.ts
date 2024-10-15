@@ -1,6 +1,7 @@
 import { Component, input, OnInit, output, signal } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Project } from '../../interfaces/project';
+import { ProjectExistValidator } from '../../services/validator.service';
 
 @Component({
   selector: 'app-project-form',
@@ -13,6 +14,7 @@ export class ProjectFormComponent implements OnInit {
 
   project = input<Project>();
   saveProject = output<Project>();
+  projectList = input.required<Project[]>();
 
   protected form = signal<FormGroup>(
     new FormGroup({
@@ -26,7 +28,8 @@ export class ProjectFormComponent implements OnInit {
     this.initForm();
   }
 
-  initForm() {
+  initForm(): void {
+    this.form().controls['name'].addValidators(ProjectExistValidator(this.projectList()));
     this.form().controls['name'].setValue(this.project()?.name ?? '');
     this.form().controls['username'].setValue(this.project()?.username ?? '');
     this.form().controls['website'].setValue(this.project()?.website ?? '');
@@ -41,7 +44,7 @@ export class ProjectFormComponent implements OnInit {
     }
   }
 
-  save() {
+  save(): void {
     let projectAux: Project = this.project() ?? this.newProject();
     const formAux = this.form().value;
     projectAux.name = formAux.name;
@@ -49,5 +52,9 @@ export class ProjectFormComponent implements OnInit {
     projectAux.website = formAux.website;
     this.saveProject.emit(projectAux);
   }
+
+  requiredValidator = (formControl: string): boolean  => this.form().get(formControl)?.touched && this.form().get(formControl)?.errors?.['required'];
+
+  existValidator = (formControl: string): boolean  => this.form().get(formControl)?.dirty && this.form().get(formControl)?.errors?.['projectExists'];
 
 }

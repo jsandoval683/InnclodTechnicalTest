@@ -17,7 +17,7 @@
 @if (formModal()) {
 <app-modal (closeModalAction)="closeFormModal()" [data]="formModalTemplate()" modalTitle="Formulario de proyecto">
     <ng-template #formTemplate>
-        <app-project-form (saveProject)="saveProject($event)" [project]="projectSelected()" />
+        <app-project-form [projectList]="projects()" (saveProject)="saveProject($event)" [project]="projectSelected()" />
     </ng-template>
 </app-modal>
 }

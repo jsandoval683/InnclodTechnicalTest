@@ -9,9 +9,9 @@ import { environment } from '../../../environments/environment';
 })
 export class ProjectApiService {
 
-  apiPath: string = '/users';
+  #apiPath: string = '/users';
 
-  http = inject(HttpClient);
+  #http = inject(HttpClient);
 
-  getProjects = (): Observable<Project[]> => this.http.get<Project[]>(`${environment.basePath}${this.apiPath}`);
+  getProjects = (): Observable<Project[]> => this.#http.get<Project[]>(`${environment.basePath}${this.#apiPath}`);
 }
