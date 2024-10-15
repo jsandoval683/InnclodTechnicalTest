@@ -5,16 +5,21 @@
             <input type="text" formControlName="name">
             <span class="placeholder">Título</span>
         </div>
-        @if (formGroup.get('name')?.touched && formGroup.get('name')?.errors?.['required']) {
+        @if (requiredValidator('name')) {
         <div class="alert">
             El título es obligatorio.
+        </div>
+        }
+        @if (existValidator('name')) {
+        <div class="alert">
+            El título ya existe.
         </div>
         }
         <div class="inputBox">
             <input formControlName="username">
             <span class="placeholder">Descripción</span>
         </div>
-        @if (formGroup.get('username')?.touched && formGroup.get('username')?.errors?.['required']) {
+        @if (requiredValidator('username')) {
         <div class="alert">
             La descripción es obligatorio.
         </div>
@@ -23,7 +28,7 @@
             <input formControlName="website">
             <span class="placeholder">Sitio Web</span>
         </div>
-        @if (formGroup.get('website')?.touched && formGroup.get('website')?.errors?.['required']) {
+        @if (requiredValidator('website')) {
         <div class="alert">
             El Sitio Web es obligatorio.
         </div>
