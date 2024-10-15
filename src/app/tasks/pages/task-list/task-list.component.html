@@ -1,7 +1,8 @@
 <div class="card-container">
-    <h1>Lista de tareas</h1>
+    <h1>Lista de tareas de {{project()?.name}}</h1>
     @for (item of todoList(); track item.id) {
-    <app-task-card [task]='item' />
+    <app-task-card [task]='item' (changeOutput)="changeStatus($event, item.id)"
+        (deleteOutput)="openDialog('200ms', '200ms', item.id)" (editOutput)="edit(item)" />
     }
 </div>
 
@@ -12,3 +13,11 @@
             clip-rule="evenodd" />
     </svg>
 </div>
+
+@if (formModal()) {
+<app-modal (closeModalAction)="closeFormModal()" [data]="formModalTemplate()" modalTitle="Formulario de tareas">
+    <ng-template #formTemplate>
+        <app-task-form (saveTask)="saveTask($event)" [task]="taskSelected()" />
+    </ng-template>
+</app-modal>
+}

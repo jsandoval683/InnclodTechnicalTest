@@ -84,6 +84,9 @@ export default class ProjectListComponent implements OnInit {
     this.#alertService.success('Proceso exitoso');
   }
 
-  goToTodo = (projectId: number): Promise<boolean> => this.#router.navigate([`projects/todos/${projectId}`]);
+  goToTodo (project: Project): void {
+    localStorage.setItem('project', JSON.stringify(project));
+    this.#router.navigate([`projects/todos/${project.id}`]);
+  }
 
 }
